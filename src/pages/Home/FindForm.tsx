@@ -15,6 +15,7 @@ import { getIpfsUrl } from '../../utils/ipfs';
 import { BigNumber } from 'ethers';
 import { Box, CircularProgress } from '@mui/material';
 import { toast } from 'react-toastify';
+import moment from 'moment';
 
 const Layout = styled.div`
   padding-top: 0.5rem;
@@ -52,7 +53,7 @@ const FindForm = () => {
       title: 'Ngày cấp',
       dataIndex: 'createdAt',
       key: 'createdAt',
-      render: (text: any, { createdAt }: any) => createdAt
+      render: (text: any, { createdAt }: any) => moment(createdAt).format("YYYY/MM/DD")
     },
     {
       title: 'Văn bằng',

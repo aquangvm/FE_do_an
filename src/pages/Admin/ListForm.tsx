@@ -8,6 +8,7 @@ import { BigNumber } from 'ethers';
 import { toast } from 'react-toastify';
 import { CircularProgress } from '@mui/material';
 import { Box } from '@mui/system';
+import moment from 'moment';
 
 const Layout = styled.div`
   padding-top: 0.5rem;
@@ -41,7 +42,7 @@ const ListForm = () => {
       title: 'Ngày cấp',
       dataIndex: 'createdAt',
       key: 'createdAt',
-      render: (text: any, { createdAt }: any) => createdAt
+      render: (text: any, { createdAt }: any) => moment(createdAt).format("YYYY/MM/DD")
     },
     {
       title: 'Văn bằng',
